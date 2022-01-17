@@ -17,4 +17,26 @@ public class MathOpsController {
     public Integer add(@RequestParam Integer number1, @RequestParam Integer number2) {
         return number1 + number2;
     }
+
+    @RequestMapping(value = "/multiply", method = RequestMethod.POST)
+    @ApiOperation(value = "Multiply two numbers")
+    public Integer multiply(@RequestParam Integer number1, @RequestParam Integer number2) {
+        return number1 * number2;
+    }
+
+    @RequestMapping(value = "/subtract", method = RequestMethod.POST)
+    @ApiOperation(value = "Substract two numbers")
+    public Integer subtract(@RequestParam Integer number1, @RequestParam Integer number2) {
+        return number1 - number2;
+    }
+
+    @RequestMapping(value = "/divide", method = RequestMethod.POST)
+    @ApiOperation(value = "Divide two numbers")
+    public float divide(@RequestParam float number1, @RequestParam float number2) {
+
+        if (number2 == 0) {
+            throw new ArithmeticException("Cannot divide by 0");
+        }
+        return number1 / number2;
+    }
 }
