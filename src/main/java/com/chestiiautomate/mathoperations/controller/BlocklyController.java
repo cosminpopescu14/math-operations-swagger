@@ -9,6 +9,6 @@ public class BlocklyController {
 
     @GetMapping("/BlocklyAutomation")
     public String blockly() {
-        return "BlocklyAutomation/blockly.html";
+        return "BlocklyAutomation/index.html";
     }
 }
